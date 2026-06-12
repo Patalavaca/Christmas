@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Christmas">
+<meta name="theme-color" content="#0D0A04">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAADTElEQVR42u3csU0DQRRF0QkIEK2QUQcV0BKN0Ao90IuRA0tOEAFoZnbvsXQb+PtOALZ2jM0/T48PFx274WPgAsTg1QThoSqJwQNUEoIHpiQED0hZCB6Kkgg8CGUhOL6yCBxdWQSOrSwCR1YWgeP+vcvXy6+504YIHHXO+CHYEIFjzhs+CJshcEQA0ggccN34IVgMwPHWjx+CRQgcDYA0AgcDIAvAsQBII3AoALIAHAmANAIHAiALwHEASCNwGAAAkG+CiwAcZQ2Cz49X498BgYMAAICmQriO/5bhA5BD8BMAd5oMwDHmdz/+W+6yCIFDAACAlo4fAgAAAACA8vghACA/fggAAAAAAMrjh2AiAEcAAABtN34IAAAAAADK44cAAAAAAKA8fggAyI8fAgAAAACA8vghAAAAAAAojx8CAAAAAIDy+CEAAAAAACiPHwIA8uOHAAAAAACgPH4IAAAAAADK44cAAAAAAKA8fggAAAAAAMrjhwCA/PghAMBvgQSA3wIJAD+FEAC+CRYAvggTAL4HEAC+BxAAvgcQAKcdPwQA5McPAQD58UMAQH78EACQHz8EAOTHDwEA+fFDAEB+/BAAkB8/BADkxw8BAPnxQwBAfvwQxAEYPwTD+FVGMIxfZQTD+FVG4L9A3gvkj2B5LxAA8l4gAOS1KADIa1EAkLdCACBvhQBA/qcPgPFDAIDhgwCA8UMAgPFDAIDhgwCA8UMAgOGDAIDxQwCA4YMAgPFDAIDhgwCA8UMAgPFDAIDhgwCA8UMAgOGDAIDxQwCA4YMAgPFDAIDhgwDAqXp/e/733BUAAAQAAAIAAAEAgAAAQAAAIAAAEAAACAAABAAAAgAAAQCAAABAAAAgAAAQAAAIAAAAcAQAABAAAAgAAAQAAAIAAAEAgAAAQAAAIAAAEAAACAAABAAAAgAAAQCABIAEgASAdAwA149DCAAJAAkACQAJAAkACQDpvAAgUHr8AAgABxEAUhQABEqPHwAB4DAqA4BA6fEDoDwACJQePwDKA4BA6fEDoDwACJQePwTKjx8A5QFAoPT4IVB+/BAoP34IlB8/BMqPHwLlxw+B8uOHQPnxg6D88CGQ8YMgwwdBhg+CDB8GGT0QOsDgvwGN5DQHbSD06gAAAABJRU5ErkJggg==">
+<script>
+(function(){
+  const manifest = "{\"name\": \"Christmas\", \"short_name\": \"Christmas\", \"start_url\": \".\", \"display\": \"standalone\", \"background_color\": \"#0D0A04\", \"theme_color\": \"#0D0A04\", \"icons\": [{\"src\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAADTElEQVR42u3csU0DQRRF0QkIEK2QUQcV0BKN0Ao90IuRA0tOEAFoZnbvsXQb+PtOALZ2jM0/T48PFx274WPgAsTg1QThoSqJwQNUEoIHpiQED0hZCB6Kkgg8CGUhOL6yCBxdWQSOrSwCR1YWgeP+vcvXy6+504YIHHXO+CHYEIFjzhs+CJshcEQA0ggccN34IVgMwPHWjx+CRQgcDYA0AgcDIAvAsQBII3AoALIAHAmANAIHAiALwHEASCNwGAAAkG+CiwAcZQ2Cz49X498BgYMAAICmQriO/5bhA5BD8BMAd5oMwDHmdz/+W+6yCIFDAACAlo4fAgAAAACA8vghACA/fggAAAAAAMrjh2AiAEcAAABtN34IAAAAAADK44cAAAAAAKA8fggAyI8fAgAAAACA8vghAAAAAAAojx8CAAAAAIDy+CEAAAAAACiPHwIA8uOHAAAAAACgPH4IAAAAAADK44cAAAAAAKA8fggAAAAAAMrjhwCA/PghAMBvgQSA3wIJAD+FEAC+CRYAvggTAL4HEAC+BxAAvgcQAKcdPwQA5McPAQD58UMAQH78EACQHz8EAOTHDwEA+fFDAEB+/BAAkB8/BADkxw8BAPnxQwBAfvwQxAEYPwTD+FVGMIxfZQTD+FVG4L9A3gvkj2B5LxAA8l4gAOS1KADIa1EAkLdCACBvhQBA/qcPgPFDAIDhgwCA8UMAgPFDAIDhgwCA8UMAgOGDAIDxQwCA4YMAgPFDAIDhgwCA8UMAgPFDAIDhgwCA8UMAgOGDAIDxQwCA4YMAgPFDAIDhgwDAqXp/e/733BUAAAQAAAIAAAEAgAAAQAAAIAAAEAAACAAABAAAAgAAAQCAAABAAAAgAAAQAAAIAAAAcAQAABAAAAgAAAQAAAIAAAEAgAAAQAAAIAAAEAAACAAABAAAAgAAAQCABIAEgASAdAwA149DCAAJAAkACQAJAAkACQDpvAAgUHr8AAgABxEAUhQABEqPHwAB4DAqA4BA6fEDoDwACJQePwDKA4BA6fEDoDwACJQePwTKjx8A5QFAoPT4IVB+/BAoP34IlB8/BMqPHwLlxw+B8uOHQPnxg6D88CGQ8YMgwwdBhg+CDB8GGT0QOsDgvwGN5DQHbSD06gAAAABJRU5ErkJggg==\", \"sizes\": \"192x192\", \"type\": \"image/png\"}]}";
+  const blob = new Blob([manifest], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('link');
+  link.rel = 'manifest';
+  link.href = url;
+  document.head.appendChild(link);
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --gold:#C9A84C;
+    --gold-light:#E8C97A;
+    --gold-dim:#D4B040;
+    --dirt:#8B6F47;
+    --dirt-light:#B8956A;
+    --dirt-pale:#D4B896;
+    --grass:#4A7C3F;
+    --sky:#87CEEB;
+    --ink:#1A1208;
+    --parchment:#F5EDD8;
+    --parchment-dark:#E8D9B8;
+  }
+  html,body{height:100%;background:var(--ink);font-family:'Crimson Pro',serif;overflow:hidden}
+
+  /* ── HEADER ── */
+  #header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--ink);
+    border-bottom:1px solid rgba(255,213,90,0.45);
+    padding:14px 20px 10px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  #header h1{
+    font-family:'Playfair Display',serif;
+    color:var(--gold);font-size:1.6rem;font-weight:400;letter-spacing:2px;
+  }
+  #header .subtitle{color:rgba(255,213,90,0.75);font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:2px}
+  #progress-pill{
+    background:rgba(201,168,76,0.12);border:1px solid rgba(255,213,90,0.55);
+    border-radius:20px;padding:4px 12px;
+    color:var(--gold-light);font-size:0.8rem;letter-spacing:1px;
+  }
+
+  /* ── GRID ── */
+  #grid-view{
+    position:fixed;top:70px;left:0;right:0;bottom:0;
+    overflow-y:auto;padding:16px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+    align-content:start;
+  }
+  #grid-view::-webkit-scrollbar{width:4px}
+  #grid-view::-webkit-scrollbar-track{background:transparent}
+  #grid-view::-webkit-scrollbar-thumb{background:rgba(255,213,90,0.55);border-radius:2px}
+
+  /* ── AIM CARD ── */
+  .aim-card{
+    background:var(--ink);
+    border-radius:12px;overflow:hidden;
+    border:1px solid rgba(255,213,90,0.4);
+    cursor:pointer;transition:transform .2s,border-color .2s;
+    position:relative;
+  }
+  .aim-card:active{transform:scale(0.97)}
+  .aim-card:hover{border-color:rgba(255,213,90,0.65)}
+  .card-scene{width:100%;height:120px;display:block}
+  .card-footer{padding:10px 12px 12px}
+  .card-title{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--parchment);font-weight:400;line-height:1.2}
+  .card-steps{margin-top:6px;display:flex;gap:4px;flex-wrap:wrap}
+  .step-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:rgba(255,213,90,0.45);border:1px solid rgba(255,213,90,0.55);
+    transition:background .3s;
+  }
+  .step-dot.done{background:var(--gold);border-color:var(--gold)}
+  .card-lock{
+    position:absolute;top:8px;right:8px;
+    background:rgba(0,0,0,0.6);border-radius:6px;padding:3px 6px;
+    font-size:0.65rem;color:var(--gold-dim);letter-spacing:1px;
+    border:1px solid rgba(255,213,90,0.45);
+  }
+  .card-progress-bar{
+    height:3px;background:rgba(201,168,76,0.1);margin-top:8px;border-radius:2px;overflow:hidden;
+  }
+  .card-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:width .5s ease}
+
+  /* ── DETAIL VIEW ── */
+  #detail-view{
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    background:var(--ink);
+    z-index:200;
+    transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+    display:flex;flex-direction:column;overflow:hidden;
+  }
+  #detail-view.open{transform:translateX(0)}
+  #detail-header{
+    padding:14px 20px 12px;
+    border-bottom:1px solid rgba(255,213,90,0.4);
+    display:flex;align-items:center;gap:14px;
+    flex-shrink:0;
+  }
+  #back-btn{
+    background:none;border:none;cursor:pointer;
+    color:var(--gold);font-size:1.4rem;padding:4px;
+  }
+  #detail-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--parchment);font-weight:400}
+  #detail-subtitle{font-size:0.75rem;color:var(--gold-dim);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+
+  /* ── SCENE BANNER ── */
+  #detail-scene{width:100%;height:160px;flex-shrink:0;display:block}
+
+  /* ── ROAD SECTION ── */
+  #road-container{
+    flex:1;overflow-y:auto;overflow-x:hidden;
+    padding:0;position:relative;
+  }
+  #road-container::-webkit-scrollbar{width:4px}
+  #road-container::-webkit-scrollbar-thumb{background:rgba(255,213,90,0.55);border-radius:2px}
+
+  #road-scroll-inner{padding:24px 16px 40px;min-height:100%}
+
+  /* THE ROAD SVG */
+  .road-svg-wrap{width:100%;margin-bottom:0}
+  .road-svg-wrap svg{width:100%;display:block;overflow:visible}
+
+  /* ── WAYPOINT ITEMS (below road) ── */
+  .waypoint-list{display:flex;flex-direction:column;gap:0;margin-top:-4px}
+  .waypoint-item{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:14px 16px;border-bottom:1px solid rgba(201,168,76,0.06);
+    cursor:pointer;transition:background .2s;
+    position:relative;
+  }
+  .waypoint-item:active{background:rgba(201,168,76,0.05)}
+  .waypoint-item.locked{opacity:0.4;cursor:default;pointer-events:none}
+  .wp-circle{
+    width:28px;height:28px;border-radius:50%;flex-shrink:0;
+    border:2px solid rgba(255,213,90,0.55);
+    background:rgba(201,168,76,0.05);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.8rem;color:var(--gold-dim);
+    transition:all .3s;margin-top:1px;
+  }
+  .wp-circle.done{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+  .wp-circle.done::after{content:'✓';font-size:0.9rem;font-weight:700}
+  .wp-circle:not(.done)::after{content:attr(data-n)}
+  .wp-text{flex:1}
+  .wp-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--parchment);font-weight:400;line-height:1.3}
+  .wp-desc{font-size:0.8rem;color:rgba(255,213,90,0.75);margin-top:3px;line-height:1.4}
+  .wp-lock-badge{font-size:0.7rem;color:var(--gold-dim);background:rgba(201,168,76,0.08);border:1px solid rgba(255,213,90,0.45);border-radius:4px;padding:2px 6px;margin-top:5px;display:inline-block;letter-spacing:1px}
+
+  /* ── LOCK OVERLAY ── */
+  #lock-overlay{
+    position:fixed;inset:0;z-index:400;
+    background:rgba(10,8,4,0.85);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transition:opacity .2s;
+  }
+  #lock-overlay.show{opacity:1;pointer-events:all}
+  .lock-box{
+    background:#1A1208;border:1px solid rgba(255,213,90,0.55);
+    border-radius:16px;padding:32px 28px;max-width:280px;text-align:center;
+  }
+  .lock-box .lock-icon{font-size:2.5rem;margin-bottom:12px}
+  .lock-box h3{font-family:'Playfair Display',serif;color:var(--parchment);font-size:1.1rem;margin-bottom:8px}
+  .lock-box p{color:rgba(255,213,90,0.82);font-size:0.85rem;line-height:1.5;margin-bottom:20px}
+  .lock-box button{
+    background:none;border:1px solid rgba(255,213,90,0.55);color:var(--gold);
+    padding:8px 24px;border-radius:8px;font-family:'Crimson Pro',serif;font-size:0.9rem;cursor:pointer;
+  }
+
+  /* ── BUILD MY ROAD BUTTON ── */
+  #build-road-btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    margin:0 16px 4px;padding:11px 16px;
+    background:rgba(201,168,76,0.08);
+    border:1px dashed rgba(255,213,90,0.6);
+    border-radius:10px;cursor:pointer;
+    color:var(--gold);font-family:'Crimson Pro',serif;font-size:0.9rem;letter-spacing:1px;
+    transition:all .2s;flex-shrink:0;
+  }
+  #build-road-btn:hover{background:rgba(201,168,76,0.14);border-color:rgba(255,213,90,0.82)}
+  #build-road-btn .btn-icon{font-size:1.1rem}
+  #build-road-btn.has-ai{border-style:solid;color:var(--gold-light);background:rgba(201,168,76,0.12)}
+
+  /* ── AI PANEL ── */
+  #ai-panel{
+    position:fixed;inset:0;z-index:300;
+    background:rgba(5,3,1,0.92);
+    display:flex;align-items:flex-end;
+    opacity:0;pointer-events:none;transition:opacity .25s;
+  }
+  #ai-panel.show{opacity:1;pointer-events:all}
+  #ai-panel-inner{
+    width:100%;background:#1E1408;
+    border-top:1px solid rgba(255,213,90,0.55);
+    border-radius:20px 20px 0 0;
+    padding:24px 20px 36px;
+    transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+    max-height:80vh;overflow-y:auto;
+  }
+  #ai-panel.show #ai-panel-inner{transform:translateY(0)}
+  .ai-panel-title{
+    font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold);
+    margin-bottom:6px;
+  }
+  .ai-panel-sub{font-size:0.8rem;color:rgba(255,213,90,0.75);letter-spacing:1px;margin-bottom:18px;line-height:1.5}
+  .ai-context-label{font-size:0.75rem;color:var(--gold-dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+  .ai-context-input{
+    width:100%;background:rgba(201,168,76,0.06);
+    border:1px solid rgba(255,213,90,0.45);border-radius:8px;
+    padding:12px;color:var(--parchment);font-family:'Crimson Pro',serif;font-size:0.95rem;
+    resize:none;outline:none;line-height:1.5;margin-bottom:14px;
+  }
+  .ai-context-input:focus{border-color:rgba(255,213,90,0.75)}
+  .ai-context-input::placeholder{color:rgba(255,213,90,0.5)}
+  .ai-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .ai-chip{
+    background:rgba(201,168,76,0.08);border:1px solid rgba(255,213,90,0.45);
+    border-radius:16px;padding:5px 12px;
+    font-size:0.78rem;color:rgba(255,213,90,0.82);cursor:pointer;transition:all .15s;
+  }
+  .ai-chip:active{background:rgba(201,168,76,0.18);color:var(--gold)}
+  .ai-btn-row{display:flex;gap:10px;margin-top:4px}
+  .ai-btn-cancel{
+    flex:1;padding:11px;background:none;border:1px solid rgba(255,213,90,0.45);
+    border-radius:8px;color:rgba(255,213,90,0.75);font-family:'Crimson Pro',serif;font-size:0.9rem;cursor:pointer;
+  }
+  .ai-btn-generate{
+    flex:2;padding:11px;background:var(--gold);border:none;
+    border-radius:8px;color:var(--ink);font-family:'Playfair Display',serif;font-size:0.95rem;
+    font-weight:700;cursor:pointer;transition:opacity .2s;
+  }
+  .ai-btn-generate:disabled{opacity:0.5;cursor:default}
+
+  /* ── AI LOADING ── */
+  #ai-loading{
+    position:fixed;inset:0;z-index:350;background:rgba(5,3,1,0.94);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transition:opacity .2s;
+  }
+  #ai-loading.show{opacity:1;pointer-events:all}
+  .ai-loading-road{width:180px;height:40px;position:relative;margin-bottom:24px}
+  .ai-loading-line{
+    position:absolute;top:50%;left:0;right:0;height:3px;
+    background:rgba(255,213,90,0.4);border-radius:2px;transform:translateY(-50%);
+  }
+  .ai-loading-fill{
+    position:absolute;top:50%;left:0;height:3px;
+    background:linear-gradient(90deg,var(--gold-dim),var(--gold));
+    border-radius:2px;transform:translateY(-50%);
+    animation:roadFill 2s ease-in-out infinite;
+  }
+  @keyframes roadFill{0%{width:0}60%{width:100%}100%{width:100%,opacity:0}}
+  .ai-loading-dot{
+    position:absolute;top:50%;width:12px;height:12px;border-radius:50%;
+    background:var(--gold);transform:translate(-50%,-50%);
+    animation:dotMove 2s ease-in-out infinite;
+  }
+  @keyframes dotMove{0%{left:0}60%{left:100%}100%{left:100%}}
+  .ai-loading-text{color:var(--gold);font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:2px}
+  .ai-loading-sub{color:rgba(255,213,90,0.65);font-size:0.78rem;margin-top:8px;letter-spacing:1px}
+
+  /* ── AI BADGE on waypoints ── */
+  .ai-badge{
+    font-size:0.65rem;background:rgba(255,213,90,0.4);border:1px solid rgba(255,213,90,0.55);
+    border-radius:4px;padding:2px 5px;color:var(--gold-dim);letter-spacing:1px;
+    margin-left:6px;vertical-align:middle;
+  }
+
+  /* ── TOAST ── */
+  #toast{
+    position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:var(--gold);color:var(--ink);
+    padding:10px 20px;border-radius:20px;
+    font-family:'Playfair Display',serif;font-size:0.9rem;
+    opacity:0;transition:all .3s;pointer-events:none;z-index:500;
+    white-space:nowrap;
+  }
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ── CELEBRATION ── */
+  #celebration{
+    position:fixed;inset:0;z-index:600;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(0,0,0,0.8);
+    opacity:0;pointer-events:none;transition:opacity .3s;
+  }
+  #celebration.show{opacity:1;pointer-events:all}
+  .celeb-box{
+    text-align:center;padding:40px 32px;
+    background:radial-gradient(ellipse at center,#2A1E04 0%,var(--ink) 70%);
+    border:1px solid var(--gold);border-radius:20px;max-width:300px;
+  }
+  .celeb-icon{font-size:3rem;margin-bottom:12px;display:block}
+  .celeb-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);margin-bottom:8px}
+  .celeb-msg{font-size:0.9rem;color:var(--parchment);line-height:1.6;margin-bottom:20px}
+  .celeb-close{background:var(--gold);color:var(--ink);border:none;padding:10px 28px;border-radius:10px;font-family:'Playfair Display',serif;font-size:0.95rem;cursor:pointer}
+
+/* ── EXPORT/IMPORT ── */
+#ei-btn{background:none;border:none;color:rgba(255,213,90,0.6);font-size:1.1rem;cursor:pointer;padding:4px 8px;transition:color .2s;flex-shrink:0}
+#ei-btn:active{color:var(--gold)}
+#ei-overlay{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.88);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+#ei-overlay.show{opacity:1;pointer-events:all}
+#ei-box{width:100%;background:#1A1208;border-top:1px solid rgba(255,213,90,0.5);border-radius:20px 20px 0 0;padding:24px 20px 40px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+#ei-overlay.show #ei-box{transform:translateY(0)}
+.ei-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold,#C9A84C);margin-bottom:6px}
+.ei-sub{font-size:0.78rem;color:rgba(255,213,90,0.65);margin-bottom:18px;line-height:1.5}
+.ei-btn-row{display:flex;gap:10px;margin-bottom:16px}
+.ei-action-btn{flex:1;padding:11px;border-radius:8px;font-family:'Playfair Display',serif;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.ei-export-btn{background:rgba(255,213,90,0.4);border:1px solid rgba(255,213,90,0.55);color:#FFD55A}
+.ei-import-btn{background:rgba(42,184,100,0.1);border:1px solid rgba(42,184,100,0.3);color:#4CAF50}
+#ei-code-area{width:100%;background:rgba(0,0,0,0.3);border:1px solid rgba(255,213,90,0.45);border-radius:8px;padding:10px;color:rgba(245,237,216,0.7);font-family:monospace;font-size:0.72rem;resize:none;outline:none;min-height:80px;line-height:1.4;margin-bottom:10px;word-break:break-all}
+#ei-code-area::placeholder{color:rgba(255,213,90,0.4)}
+.ei-code-action-row{display:flex;gap:8px}
+.ei-copy-btn{flex:1;padding:9px;background:rgba(201,168,76,0.1);border:1px solid rgba(255,213,90,0.45);border-radius:8px;color:rgba(255,213,90,0.88);font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer}
+.ei-confirm-btn{flex:1;padding:9px;background:rgba(42,184,100,0.15);border:1px solid rgba(42,184,100,0.3);border-radius:8px;color:#4CAF50;font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer;display:none}
+.ei-close-btn{padding:9px 20px;background:none;border:1px solid rgba(255,213,90,0.4);border-radius:8px;color:rgba(255,213,90,0.65);font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div>
+    <h1>Christmas</h1>
+    <div class="subtitle">Your road ahead</div>
+  </div>
+  <button id="ei-btn" onclick="eiOpen()" title="Backup data">⬆⬇</button>
+  <div id="progress-pill">0 / 14</div>
+</div>
+
+<div id="grid-view"></div>
+
+<div id="detail-view">
+  <div id="detail-header">
+    <button id="back-btn" onclick="closeDetail()">←</button>
+    <div>
+      <div id="detail-title"></div>
+      <div id="detail-subtitle"></div>
+    </div>
+  </div>
+  <svg id="detail-scene" viewBox="0 0 360 160" preserveAspectRatio="xMidYMid slice"></svg>
+  <button id="build-road-btn" onclick="openAIPanel()">
+    <span class="btn-icon">✦</span>
+    <span id="build-road-label">Build my road with AI</span>
+  </button>
+  <div id="road-container">
+    <div id="road-scroll-inner">
+      <div class="road-svg-wrap"><svg id="road-svg" viewBox="0 0 340 180" preserveAspectRatio="xMidYMid meet"></svg></div>
+      <div class="waypoint-list" id="waypoint-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- AI PANEL -->
+<div id="ai-panel" onclick="closeAIPanel()">
+  <div id="ai-panel-inner" onclick="event.stopPropagation()">
+    <div class="ai-panel-title">Build your road</div>
+    <div class="ai-panel-sub" id="ai-panel-sub">Tell it where you are and any constraints. It will break this aim down into your real critical path — no vagueness, just what to do next.</div>
+    <div class="ai-context-label">Your situation</div>
+    <textarea class="ai-context-input" id="ai-context-input" rows="4" placeholder="e.g. I currently weigh 14st 2, I have ME so energy is limited, I have a cross trainer at home, I've failed at this before and motivation is a problem..."></textarea>
+    <div class="ai-context-label" style="margin-bottom:8px">Quick context</div>
+    <div class="ai-chips">
+      <div class="ai-chip" onclick="addChip('I have ME/CFS so pacing is essential')">ME/CFS</div>
+      <div class="ai-chip" onclick="addChip('I have a cross trainer and dumbbells at home')">Home gym</div>
+      <div class="ai-chip" onclick="addChip('I have a sauna at home')">Sauna</div>
+      <div class="ai-chip" onclick="addChip('I struggle with willpower and have failed at this before')">Past failures</div>
+      <div class="ai-chip" onclick="addChip('I walk 10,000 steps per day already')">10k steps</div>
+      <div class="ai-chip" onclick="addChip('I am based in Altrincham, Manchester')">Altrincham</div>
+      <div class="ai-chip" onclick="addChip('I want to be realistic, not perfect')">Be realistic</div>
+      <div class="ai-chip" onclick="addChip('My deadline is Christmas 2026')">Christmas deadline</div>
+    </div>
+    <div class="ai-btn-row">
+      <button class="ai-btn-cancel" onclick="closeAIPanel()">Cancel</button>
+      <button class="ai-btn-generate" id="ai-generate-btn" onclick="generateRoad()">Build the road ✦</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI LOADING -->
+<div id="ai-loading">
+  <div class="ai-loading-road">
+    <div class="ai-loading-line"></div>
+    <div class="ai-loading-fill"></div>
+    <div class="ai-loading-dot"></div>
+  </div>
+  <div class="ai-loading-text">Building your road</div>
+  <div class="ai-loading-sub">Breaking it down to today...</div>
+</div>
+
+<div id="lock-overlay" onclick="closeLock()">
+  <div class="lock-box" onclick="event.stopPropagation()">
+    <div class="lock-icon">🔒</div>
+    <h3 id="lock-title">Not yet</h3>
+    <p id="lock-msg">Reach your weight target to unlock this aim.</p>
+    <button onclick="closeLock()">Understood</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+<div id="celebration" onclick="closeCelebration()">
+  <div class="celeb-box">
+    <span class="celeb-icon" id="celeb-icon">🌟</span>
+    <div class="celeb-title" id="celeb-title">Step Complete</div>
+    <div class="celeb-msg" id="celeb-msg"></div>
+    <button class="celeb-close" onclick="closeCelebration()">Keep going</button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════════
+const AIMS = [
+  {
+    id:'weight', title:'Lose the Weight', color:'#4A9EE0', accent:'#87CEEB',
+    lock:null,
+    steps:[
+      {name:'Reach 13 stone',desc:'First milestone. Body changing.'},
+      {name:'Reach 12st 8',desc:'Halfway there. Clothes looser.'},
+      {name:'Reach 12st 4',desc:'Locks start opening.'},
+      {name:'Reach 12st 2',desc:'Almost there.'},
+      {name:'Below 12 stone',desc:'Done. The road opens up completely.'}
+    ],
+    celebration:{icon:'✈️',title:'You did it.',msg:'Clothes that fit. Confidence back. Every locked door now open. This is what you worked for.'},
+    scene: (svg)=>drawScene_weight(svg)
+  },
+  {
+    id:'glyn', title:'Meet Glyn for a Beer', color:'#C17F3A', accent:'#E8A855',
+    lock:null,
+    steps:[
+      {name:'Message Glyn',desc:'Just send it. Tonight.'},
+      {name:'Agree a date',desc:'Something in the diary.'},
+      {name:'Turn up',desc:'That\'s it. That\'s the whole step.'}
+    ],
+    celebration:{icon:'🍺',title:'Old friends.',msg:'Some friendships just pick up exactly where they left off.'},
+    scene:(svg)=>drawScene_glyn(svg)
+  },
+  {
+    id:'london', title:'London Stag', color:'#8B6914', accent:'#C9A84C',
+    lock:{weight:'12st 4', msg:'Reach 12st 4 to unlock the London Stag.'},
+    steps:[
+      {name:'Reach 12st 4',desc:'Weight gate — unlocks this aim.'},
+      {name:'Buy new jeans',desc:'Something that actually fits.'},
+      {name:'Confirm with John',desc:'You\'re going.'},
+      {name:'Book train or hotel',desc:'Make it real.'},
+      {name:'Attend — 17 Oct 2026',desc:'Be there. Be present.'}
+    ],
+    celebration:{icon:'🎉',title:'London Stag — done.',msg:'October 2026. You were there, you felt good, and you showed up for John.'},
+    scene:(svg)=>drawScene_london(svg)
+  },
+  {
+    id:'dublin', title:'Dublin Stag', color:'#2D6A35', accent:'#4CAF50',
+    lock:{weight:'12st 4', msg:'Reach 12st 4 to unlock Dublin.'},
+    steps:[
+      {name:'Reach 12st 4',desc:'Weight gate.'},
+      {name:'Confirm with John',desc:'You\'re in.'},
+      {name:'Book flights MAN→DUB',desc:'It\'s happening.'},
+      {name:'Book accommodation',desc:'Temple Bar area.'},
+      {name:'Attend — 20-22 Nov 2026',desc:'Dublin. Guinness. John.'}
+    ],
+    celebration:{icon:'🇮🇪',title:'Dublin — done.',msg:'Three nights in Dublin. You\'ll remember this one.'},
+    scene:(svg)=>drawScene_dublin(svg)
+  },
+  {
+    id:'wedding', title:"John's Wedding", color:'#7A8FA6', accent:'#B8D4E8',
+    lock:{weight:'12st', msg:'Reach 12 stone to unlock the wedding goal.'},
+    steps:[
+      {name:'Reach 12 stone',desc:'Weight gate.'},
+      {name:'Try suit on',desc:'Does it fit properly?'},
+      {name:'Buy new shirt',desc:'Look sharp.'},
+      {name:'Attend — 2 Jan 2027',desc:'Show up well.'}
+    ],
+    celebration:{icon:'💒',title:"John's Wedding.",msg:'January 2027. You looked good, you felt good, and you were exactly where you were supposed to be.'},
+    scene:(svg)=>drawScene_wedding(svg)
+  },
+  {
+    id:'healthclub', title:'Join a Health Club', color:'#1A7A8A', accent:'#2AB8CC',
+    lock:null,
+    steps:[
+      {name:'Visit Move Altrincham',desc:'Pay-as-you-go. No commitment.'},
+      {name:'Free trial at David Lloyd',desc:'See what it feels like.'},
+      {name:'Make the decision',desc:'Pick one.'},
+      {name:'Join',desc:'Done.'},
+      {name:'Go consistently for a month',desc:'It\'s yours now.'}
+    ],
+    celebration:{icon:'🏊',title:'You have a club.',msg:'A pool. A routine. People around you. This changes things.'},
+    scene:(svg)=>drawScene_healthclub(svg)
+  },
+  {
+    id:'swimming', title:'Swimming Regularly', color:'#1565A8', accent:'#4A9FD8',
+    lock:null,
+    steps:[
+      {name:'Get Swedish goggles',desc:'Wide seal. Speedo Biofuse or similar.'},
+      {name:'First swim session',desc:'Just get in.'},
+      {name:'Swim twice in one week',desc:'Finding the rhythm.'},
+      {name:'Swim weekly for a month',desc:'It\'s a habit now.'},
+      {name:'It just happens',desc:'You don\'t think about it anymore.'}
+    ],
+    celebration:{icon:'🌊',title:'You swim now.',msg:'Horizontal. Hydrostatic pressure. Thoracic duct working. This is medicine.'},
+    scene:(svg)=>drawScene_swimming(svg)
+  },
+  {
+    id:'yoga', title:'Yoga — Hatha Classes', color:'#5C3D8A', accent:'#9B72C8',
+    lock:{weight:'12st 4', msg:'Reach 12st 4 to unlock yoga group classes.'},
+    steps:[
+      {name:'Reach 12st 4',desc:'Weight gate.'},
+      {name:'Find Hatha class locally',desc:'Look this week.'},
+      {name:'Book first session',desc:'In the diary.'},
+      {name:'Attend first class',desc:'Just be in the room.'},
+      {name:'Month of weekly classes',desc:'Part of the week now.'}
+    ],
+    celebration:{icon:'🧘',title:'Yoga — yours.',msg:'Calm, strengthening, restorative. Exactly what your nervous system needs.'},
+    scene:(svg)=>drawScene_yoga(svg)
+  },
+  {
+    id:'padel', title:'Padel', color:'#3A8A4A', accent:'#6CC97A',
+    lock:{weight:'12st', msg:'Reach 12 stone before playing padel — joint pressure matters.'},
+    steps:[
+      {name:'Reach 12 stone',desc:'Weight gate — joints first.'},
+      {name:'Find padel courts near Altrincham',desc:'Book an intro session.'},
+      {name:'First game',desc:'You\'ll love it.'},
+      {name:'Play monthly',desc:'In the social routine now.'}
+    ],
+    celebration:{icon:'🎾',title:'Padel player.',msg:'Social by design. Outdoors. Moving. This is the version of sport that sticks.'},
+    scene:(svg)=>drawScene_padel(svg)
+  },
+  {
+    id:'breathwork', title:'Breathwork & Swimming for ME', color:'#4A6A8A', accent:'#7AAAC8',
+    lock:null,
+    steps:[
+      {name:'Watch Perrin self-massage video',desc:'Direction matters more than pressure.'},
+      {name:'Diaphragmatic breathing daily',desc:'After self-massage. The sequence matters.'},
+      {name:'Regular float tank sessions',desc:'Deep parasympathetic reset.'},
+      {name:'Swimming as primary ME tool',desc:'Horizontal + hydrostatic = lymphatic.'},
+      {name:'Consistent 3-month practice',desc:'Built in. Not a phase.'}
+    ],
+    celebration:{icon:'💨',title:'Breathing differently.',msg:'Vagus nerve activated. SNS quieter. This is the physiological shift you\'ve been working toward.'},
+    scene:(svg)=>drawScene_breathwork(svg)
+  },
+  {
+    id:'nhs', title:'NHS Health Check', color:'#6A4A8A', accent:'#AA82C8',
+    lock:{weight:'12st', msg:'Reach 12 stone — go in feeling like yourself.'},
+    steps:[
+      {name:'Reach 12 stone',desc:'Go in feeling right.'},
+      {name:'Book GP appointment',desc:'NHS Health Check — overdue.'},
+      {name:'H. pylori breath test',desc:'From GI MAP findings.'},
+      {name:'Attend health check',desc:'Know your numbers.'},
+      {name:'Review and act on results',desc:'Close the loop.'}
+    ],
+    celebration:{icon:'🏥',title:'Health check — done.',msg:'You know where you stand. That\'s power, not fear.'},
+    scene:(svg)=>drawScene_nhs(svg)
+  },
+  {
+    id:'michelle', title:'Return to Michelle', color:'#8A4A5A', accent:'#C87A8A',
+    lock:null,
+    steps:[
+      {name:'Book appointment',desc:'Just book it.'},
+      {name:'Attend first session back',desc:'Pick up where you left off.'},
+      {name:'Monthly sessions established',desc:'In the routine.'}
+    ],
+    celebration:{icon:'🌿',title:'Back with Michelle.',msg:'The work continues. You showed up for yourself.'},
+    scene:(svg)=>drawScene_michelle(svg)
+  },
+  {
+    id:'como', title:'Lake Como — James McHugh', color:'#4A7A9A', accent:'#7AB8D8',
+    lock:null,
+    steps:[
+      {name:'Message James McHugh',desc:'Put it in words.'},
+      {name:'Agree a year / window',desc:'Something on the horizon.'},
+      {name:'Book it',desc:'Done. It\'s real.'},
+      {name:'Go',desc:'Lake Como. Old friend. Long overdue.'}
+    ],
+    celebration:{icon:'🏔️',title:'Lake Como.',msg:'Italian light. Cold water. An old friend. Some trips you\'ll remember forever.'},
+    scene:(svg)=>drawScene_como(svg)
+  },
+  {
+    id:'krav', title:'Krav Maga — 2027', color:'#5A3A2A', accent:'#A07050',
+    lock:null,
+    steps:[
+      {name:'Research clubs in Manchester',desc:'Find the right gym.'},
+      {name:'Attend an intro class',desc:'2027 — not before.'},
+      {name:'Join properly',desc:'Commit to it.'},
+      {name:'Train for 3 months',desc:'You\'re a student now.'}
+    ],
+    celebration:{icon:'🥋',title:'Krav Maga.',msg:'2027. Stronger than you\'ve been in years. This one is for you.'},
+    scene:(svg)=>drawScene_krav(svg)
+  }
+];
+
+// ═══════════════════════════════════════════════════════
+// SCENE DRAWING FUNCTIONS
+// ═══════════════════════════════════════════════════════
+function s(svg, tag, attrs, text){
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,v);
+  if(text) el.textContent=text;
+  svg.appendChild(el); return el;
+}
+
+function drawScene_weight(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Sky gradient
+  const defs=s(svg,'defs',{});
+  const g1=s(defs,'linearGradient',{id:'wg1',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g1,'stop',{'offset':'0%','stop-color':'#1A6BB5'});
+  s(g1,'stop',{'offset':'100%','stop-color':'#87CEEB'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#wg1)'});
+  // Ground
+  s(svg,'rect',{x:0,y:120,width:360,height:40,fill:'#4A9A3A'});
+  s(svg,'rect',{x:0,y:135,width:360,height:25,fill:'#3A8A2A'});
+  // Pool left
+  s(svg,'rect',{x:10,y:110,width:70,height:35,rx:4,fill:'#2288CC',opacity:0.9});
+  s(svg,'rect',{x:10,y:110,width:70,height:8,rx:4,fill:'#66BBEE'});
+  // Pool lane lines
+  for(let i=0;i<3;i++) s(svg,'line',{x1:10+i*23,y1:118,x2:10+i*23,y2:145,stroke:'#fff',opacity:0.3,'stroke-width':1});
+  // Sun
+  s(svg,'circle',{cx:300,cy:35,r:28,fill:'#FFE060'});
+  s(svg,'circle',{cx:300,cy:35,r:22,fill:'#FFD020'});
+  // Sun rays
+  for(let i=0;i<8;i++){const a=i*45*Math.PI/180;s(svg,'line',{x1:300+26*Math.cos(a),y1:35+26*Math.sin(a),x2:300+36*Math.cos(a),y2:35+36*Math.sin(a),stroke:'#FFE060','stroke-width':2,opacity:0.7})}
+  // Plane
+  s(svg,'text',{x:180,y:55,'font-size':28,fill:'white',opacity:0.9},'✈');
+  // Contrail
+  s(svg,'line',{x1:205,y1:42,x2:270,y2:38,stroke:'white','stroke-width':2,opacity:0.4});
+  s(svg,'line',{x1:205,y1:46,x2:270,y2:42,stroke:'white','stroke-width':1,opacity:0.25});
+  // Clouds
+  for(const [cx,cy,r] of [[80,30,18],[95,25,22],[110,30,16],[220,45,14],[232,40,18],[244,45,13]]){
+    s(svg,'circle',{cx,cy,r,fill:'white',opacity:0.85});
+  }
+  // Label
+  s(svg,'text',{x:180,y:152,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(255,255,255,0.7)'},'Freedom opens up');
+}
+
+function drawScene_glyn(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Evening amber sky
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#3A2008'});
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'radialGradient',{id:'gg1',cx:'50%',cy:'60%',r:'60%'});
+  s(g,'stop',{'offset':'0%','stop-color':'#D4820A','stop-opacity':'0.4'});
+  s(g,'stop',{'offset':'100%','stop-color':'transparent'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#gg1)'});
+  // Pub building
+  s(svg,'rect',{x:120,y:55,width:120,height:80,fill:'#5C3A18'});
+  s(svg,'rect',{x:100,y:50,width:160,height:12,fill:'#7A4E22'});
+  // Roof
+  s(svg,'polygon',{points:'100,50 180,20 260,50',fill:'#4A2A10'});
+  // Windows with warm glow
+  for(const [wx,wy] of [[135,75],[195,75],[135,105],[195,105]]){
+    s(svg,'rect',{x:wx,y:wy,width:22,height:18,rx:2,fill:'#E8A030',opacity:0.9});
+    s(svg,'rect',{x:wx,y:wy,width:22,height:18,rx:2,fill:'#FFC040',opacity:0.3});
+  }
+  // Door
+  s(svg,'rect',{x:165,y:108,width:30,height:27,rx:2,fill:'#2A1505'});
+  s(svg,'rect',{x:165,y:108,width:30,height:8,rx:1,fill:'#6A3E1A'});
+  // Sign
+  s(svg,'rect',{x:148,y:38,width:64,height:14,rx:3,fill:'#C9A84C'});
+  s(svg,'text',{x:180,y:49,'text-anchor':'middle','font-family':'serif','font-size':8,fill:'#1A0800'},'THE LOCAL');
+  // Street & cobbles
+  s(svg,'rect',{x:0,y:135,width:360,height:25,fill:'#2A1A08'});
+  for(let cx=10;cx<360;cx+=20) for(let cy=138;cy<160;cy+=8) s(svg,'ellipse',{cx,cy,rx:8,ry:3,fill:'#3A2A14',opacity:0.5});
+  // Two figures
+  for(const fx of [150,192]){
+    s(svg,'ellipse',{cx:fx,cy:131,rx:8,ry:8,fill:'#1A0C04'});
+    s(svg,'rect',{x:fx-5,y:131,width:10,height:14,rx:2,fill:'#1A0C04'});
+  }
+  // Warm light spill
+  s(svg,'ellipse',{cx:180,cy:145,rx:60,ry:12,fill:'#E8A030',opacity:0.08});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(232,168,80,0.6)'},'Old friends. No agenda.');
+}
+
+function drawScene_london(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'lg1',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#1A2A4A'});
+  s(g,'stop',{'offset':'100%','stop-color':'#4A3A2A'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#lg1)'});
+  // Tower Bridge simplified
+  s(svg,'rect',{x:40,y:60,width:16,height:90,fill:'#6A7A8A'});
+  s(svg,'rect',{x:56,y:55,width:60,height:8,fill:'#8A9AAA'});
+  s(svg,'rect',{x:116,y:60,width:16,height:90,fill:'#6A7A8A'});
+  s(svg,'rect',{x:56,y:63,width:60,height:45,fill:'none',stroke:'#8A9AAA','stroke-width':2});
+  // Road beneath bridge
+  s(svg,'rect',{x:0,y:108,width:360,height:12,fill:'#3A4A5A'});
+  // Big Ben silhouette
+  s(svg,'rect',{x:230,y:30,width:30,height:120,fill:'#2A3A4A'});
+  s(svg,'rect',{x:224,y:24,width:42,height:14,fill:'#3A4A5A'});
+  s(svg,'polygon',{points:'224,24 255,5 286,24',fill:'#2A3A4A'});
+  s(svg,'rect',{x:236,y:24,width:28,height:14,fill:'none',stroke:'#8A9AAA','stroke-width':1});
+  // Thames
+  s(svg,'rect',{x:0,y:120,width:360,height:25,fill:'#1A3A5A',opacity:0.8});
+  for(let i=0;i<8;i++) s(svg,'line',{x1:i*50,y1:128,x2:i*50+30,y2:132,stroke:'#4A8ABA','stroke-width':1,opacity:0.4});
+  // Autumn leaves
+  const leafColors=['#C47A20','#A85A18','#D4A030','#8A4010'];
+  for(let i=0;i<20;i++){
+    s(svg,'circle',{cx:Math.random()*360,cy:Math.random()*100+10,r:3+Math.random()*3,fill:leafColors[Math.floor(Math.random()*4)],opacity:0.7});
+  }
+  // City lights
+  for(let i=0;i<30;i++) s(svg,'circle',{cx:10+i*12,cy:140+Math.random()*10,r:1,fill:'#FFE080',opacity:0.5});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(200,160,60,0.7)'},'London — 17 October 2026');
+}
+
+function drawScene_dublin(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#0A1A0A'});
+  // Cobblestone street - warm glow
+  s(svg,'rect',{x:0,y:100,width:360,height:60,fill:'#1A1205'});
+  for(let cx=0;cx<360;cx+=18) for(let cy=105;cy<160;cy+=10){
+    s(svg,'ellipse',{cx,cy,rx:7,ry:4,fill:'#2A1E0A',stroke:'#3A2A12','stroke-width':0.5,opacity:0.8});
+  }
+  // Temple Bar area buildings
+  for(const [bx,bw,bh,bc] of [[0,50,95,'#1A2A0A'],[50,60,80,'#0A1A08'],[110,45,100,'#152A10'],[155,55,85,'#0E2008'],[210,50,90,'#1A2A0A'],[260,50,100,'#121E0A'],[310,50,80,'#0A180A']]){
+    s(svg,'rect',{x:bx,y:160-bh,width:bw,height:bh,fill:bc});
+  }
+  // Pub windows warm
+  for(const [wx,wy] of [[15,80],[15,95],[70,65],[70,80],[125,72],[125,87],[170,70],[170,85],[220,72],[220,87],[270,65],[270,80]]){
+    s(svg,'rect',{x:wx,y:wy,width:16,height:12,rx:2,fill:'#E8880A',opacity:0.85});
+  }
+  // Temple Bar sign glow
+  s(svg,'rect',{x:100,y:55,width:80,height:14,rx:3,fill:'#C03020',opacity:0.9});
+  s(svg,'text',{x:140,y:66,'text-anchor':'middle','font-family':'serif','font-size':9,fill:'#FFE0A0'},'TEMPLE BAR');
+  // Pint glasses
+  s(svg,'text',{x:160,y:100,'font-size':20},'🍺');
+  s(svg,'text',{x:185,y:100,'font-size':20},'🍺');
+  // Street glow
+  s(svg,'ellipse',{cx:180,cy:120,rx:120,ry:20,fill:'#8A4A08',opacity:0.12});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(200,160,60,0.7)'},'Dublin — 20-22 November 2026');
+}
+
+function drawScene_wedding(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Winter dawn sky
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'wdg',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#1A1A2E'});
+  s(g,'stop',{'offset':'60%','stop-color':'#4A3A5A'});
+  s(g,'stop',{'offset':'100%','stop-color':'#8A6A6A'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#wdg)'});
+  // Snow ground
+  s(svg,'rect',{x:0,y:125,width:360,height:35,fill:'#D8E8F0'});
+  s(svg,'rect',{x:0,y:125,width:360,height:8,fill:'#EEF5FA'});
+  // Church
+  s(svg,'rect',{x:120,y:55,width:120,height:75,fill:'#2A2A3A'});
+  s(svg,'polygon',{points:'105,55 180,18 255,55',fill:'#1A1A28'});
+  // Church tower
+  s(svg,'rect',{x:160,y:20,width:40,height:40,fill:'#222230'});
+  s(svg,'polygon',{points:'155,20 180,0 205,20',fill:'#1A1A28'});
+  // Stained glass windows
+  for(const [wx,wy,wc] of [[135,72,'#8030C0'],[195,72,'#C03030'],[155,95,'#2060C0'],[175,95,'#20A030']]){
+    s(svg,'rect',{x:wx,y:wy,width:20,height:28,rx:10,fill:wc,opacity:0.7});
+    s(svg,'rect',{x:wx+2,y:wy+2,width:16,height:24,rx:9,fill:'#FFE080',opacity:0.3});
+  }
+  // Door arch
+  s(svg,'rect',{x:163,y:105,width:34,height:25,rx:17,fill:'#0A0A12'});
+  // Bare winter trees
+  for(const tx of [40,80,280,320]){
+    s(svg,'line',{x1:tx,y1:125,x2:tx,y2:75,stroke:'#3A3A4A','stroke-width':3});
+    s(svg,'line',{x1:tx,y1:95,x2:tx-20,y2:75,stroke:'#3A3A4A','stroke-width':2});
+    s(svg,'line',{x1:tx,y1:95,x2:tx+15,y2:78,stroke:'#3A3A4A','stroke-width':2});
+    s(svg,'line',{x1:tx,y1:82,x2:tx-12,y2:68,stroke:'#3A3A4A','stroke-width':1});
+  }
+  // Snow flakes
+  for(let i=0;i<25;i++) s(svg,'circle',{cx:Math.random()*360,cy:Math.random()*120,r:1.5,fill:'white',opacity:0.7});
+  // Warm light spill from door
+  s(svg,'ellipse',{cx:180,cy:130,rx:50,ry:10,fill:'#E8A030',opacity:0.1});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(200,180,160,0.7)'},"John's Wedding — 2 January 2027");
+}
+
+function drawScene_healthclub(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Pool interior
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#0A1E2E'});
+  // Pool water
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'plg',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#1A8AB8'});
+  s(g,'stop',{'offset':'100%','stop-color':'#0A5A80'});
+  s(svg,'rect',{x:20,y:70,width:320,height:60,fill:'url(#plg)',rx:4});
+  // Lane lines
+  for(let i=1;i<5;i++) s(svg,'line',{x1:20+i*64,y1:70,x2:20+i*64,y2:130,stroke:'#FFD040','stroke-width':2,opacity:0.5});
+  // Water shimmer
+  for(let i=0;i<8;i++) s(svg,'line',{x1:30+i*38,y1:80+i%2*6,x2:50+i*38,y2:82+i%2*4,stroke:'#7AD4F0','stroke-width':2,opacity:0.4});
+  // Poolside / tiling
+  s(svg,'rect',{x:0,y:130,width:360,height:30,fill:'#1A3A4A'});
+  for(let i=0;i<18;i++) s(svg,'line',{x1:i*20,y1:130,x2:i*20,y2:160,stroke:'#2A4A5A','stroke-width':1});
+  // Ceiling lights
+  for(const lx of [50,120,180,240,310]) s(svg,'ellipse',{cx:lx,cy:20,rx:15,ry:8,fill:'#E8E0C0',opacity:0.7});
+  // Jacuzzi right
+  s(svg,'ellipse',{cx:300,cy:100,rx:40,ry:25,fill:'#1A6A9A'});
+  s(svg,'ellipse',{cx:300,cy:100,rx:34,ry:20,fill:'#2A9ACA'});
+  for(let i=0;i<12;i++) s(svg,'circle',{cx:280+Math.random()*40,cy:90+Math.random()*20,r:2,fill:'white',opacity:0.4});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(100,200,240,0.6)'},'Pool. Routine. Your space.');
+}
+
+function drawScene_swimming(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Still lake, mountains
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'slg',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#1A3A5A'});
+  s(g,'stop',{'offset':'45%','stop-color':'#4A8AB8'});
+  s(g,'stop',{'offset':'46%','stop-color':'#1A6A9A'});
+  s(g,'stop',{'offset':'100%','stop-color':'#0A3A5A'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#slg)'});
+  // Mountains
+  s(svg,'polygon',{points:'0,80 60,25 120,80',fill:'#2A4A6A'});
+  s(svg,'polygon',{points:'40,80 110,18 180,80',fill:'#3A5A7A'});
+  s(svg,'polygon',{points:'150,80 220,30 290,80',fill:'#2A4A6A'});
+  s(svg,'polygon',{points:'250,80 310,35 360,80',fill:'#3A5A7A'});
+  // Snow caps
+  s(svg,'polygon',{points:'55,32 60,25 65,32',fill:'#D0E8F0'});
+  s(svg,'polygon',{points:'105,25 110,18 115,25',fill:'#D0E8F0'});
+  s(svg,'polygon',{points:'215,37 220,30 225,37',fill:'#D0E8F0'});
+  // Water reflections
+  for(let i=0;i<6;i++) s(svg,'line',{x1:20+i*55,y1:90+i%2*5,x2:60+i*45,y2:92+i%2*3,stroke:'#7AC0E0','stroke-width':1.5,opacity:0.4});
+  // Reeds left
+  for(const [rx,rh] of [[15,40],[22,50],[29,38],[36,45]]){
+    s(svg,'line',{x1:rx,y1:160,x2:rx-3,y2:160-rh,stroke:'#4A7A3A','stroke-width':2});
+    s(svg,'ellipse',{cx:rx-3,cy:160-rh-4,rx:3,ry:8,fill:'#3A6A2A'});
+  }
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(120,200,240,0.6)'},'Horizontal. Weightless. Healing.');
+}
+
+function drawScene_yoga(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Deep purple interior
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#14082A'});
+  // Walls with depth
+  s(svg,'rect',{x:0,y:0,width:360,height:100,fill:'#1E0E38'});
+  // Arched window
+  s(svg,'rect',{x:140,y:15,width:80,height:65,rx:40,fill:'#2A1248'});
+  s(svg,'rect',{x:145,y:18,width:70,height:60,rx:35,fill:'#7A4AB8',opacity:0.25});
+  // Soft glow through window
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'radialGradient',{id:'yg',cx:'50%',cy:'40%',r:'30%'});
+  s(g,'stop',{'offset':'0%','stop-color':'#9A60D8','stop-opacity':'0.2'});
+  s(g,'stop',{'offset':'100%','stop-color':'transparent'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#yg)'});
+  // Floor wooden
+  s(svg,'rect',{x:0,y:100,width:360,height:60,fill:'#2A1A08'});
+  for(let i=0;i<8;i++) s(svg,'line',{x1:0,y1:100+i*8,x2:360,y2:100+i*8,stroke:'#3A2510',opacity:0.5,'stroke-width':1});
+  // Yoga mats
+  const matColors=['#5C2A8A','#7A3A9A','#4A1A7A','#6A2A88'];
+  for(let i=0;i<4;i++){
+    s(svg,'rect',{x:25+i*82,y:108,width:55,height:28,rx:4,fill:matColors[i],opacity:0.8});
+    s(svg,'rect',{x:27+i*82,y:110,width:51,height:24,rx:3,fill:'none',stroke:'rgba(200,150,255,0.2)','stroke-width':1});
+  }
+  // Seated figures on first two mats
+  for(const fx of [52,134]){
+    s(svg,'circle',{cx:fx,cy:108,r:6,fill:'#2A0A3A'});
+    s(svg,'ellipse',{cx:fx,cy:117,rx:10,ry:8,fill:'#2A0A3A'});
+  }
+  // Candles on shelf
+  s(svg,'rect',{x:5,y:85,width:90,height:5,fill:'#3A2510'});
+  for(const cx of [20,38,56,74]) {
+    s(svg,'rect',{x:cx,y:78,width:5,height:10,fill:'#E8D0A0'});
+    s(svg,'ellipse',{cx:cx+2,cy:77,rx:3,ry:5,fill:'#FFB020',opacity:0.7});
+  }
+  // Pendant lights
+  for(const lx of [90,180,270]){
+    s(svg,'line',{x1:lx,y1:0,x2:lx,y2:28,stroke:'#3A2A4A','stroke-width':1});
+    s(svg,'ellipse',{cx:lx,cy:32,rx:10,ry:6,fill:'#E8C870',opacity:0.8});
+  }
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(160,120,200,0.7)'},'Calm. Restorative. Yours.');
+}
+
+function drawScene_padel(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Bright daytime
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'pdg',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#3AB0E0'});
+  s(g,'stop',{'offset':'100%','stop-color':'#87CEEB'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#pdg)'});
+  // Sun
+  s(svg,'circle',{cx:320,cy:30,r:22,fill:'#FFE040'});
+  // Court surface
+  s(svg,'rect',{x:20,y:70,width:320,height:75,fill:'#2A7A3A',rx:4});
+  // Court lines
+  s(svg,'rect',{x:22,y:72,width:316,height:71,rx:3,fill:'none',stroke:'white','stroke-width':2});
+  s(svg,'line',{x1:180,y1:72,x2:180,y2:143,stroke:'white','stroke-width':2});
+  s(svg,'line',{x1:22,y1:107,x2:338,y2:107,stroke:'white','stroke-width':1.5});
+  s(svg,'rect',{x:60,y:72,width:240,height:71,rx:2,fill:'none',stroke:'rgba(255,255,255,0.3)','stroke-width':1});
+  // Net
+  s(svg,'rect',{x:22,y:100,width:316,height:6,fill:'#4A4A4A'});
+  s(svg,'line',{x1:22,y1:103,x2:338,y2:103,stroke:'white','stroke-width':1,opacity:0.5});
+  for(let i=0;i<16;i++) s(svg,'line',{x1:22+i*20,y1:100,x2:22+i*20,y2:106,stroke:'#6A6A6A','stroke-width':1});
+  // Ball
+  s(svg,'circle',{cx:160,cy:85,r:6,fill:'#D4E820'});
+  // Clouds
+  for(const [cx,cy,r] of [[60,25,12],[72,20,16],[84,25,11],[240,35,10],[252,30,14],[264,35,10]]){
+    s(svg,'circle',{cx,cy,r,fill:'white',opacity:0.8});
+  }
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(255,255,255,0.7)'},'Social. Outdoors. Moving.');
+}
+
+function drawScene_breathwork(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Deep blue calm
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#08122A'});
+  // Breathing ripples
+  const defs=s(svg,'defs',{});
+  for(let i=5;i>=0;i--){
+    s(svg,'circle',{cx:180,cy:80,r:20+i*22,fill:'none',stroke:'#2A5A9A','stroke-width':1.5,opacity:(0.6-i*0.1).toFixed(2)});
+  }
+  // Central glow
+  const g=s(defs,'radialGradient',{id:'bg1',cx:'50%',cy:'50%',r:'40%'});
+  s(g,'stop',{'offset':'0%','stop-color':'#4A90D8','stop-opacity':'0.3'});
+  s(g,'stop',{'offset':'100%','stop-color':'transparent'});
+  s(svg,'circle',{cx:180,cy:80,r:120,fill:'url(#bg1)'});
+  // Central symbol
+  s(svg,'circle',{cx:180,cy:80,r:16,fill:'#1A4A8A',stroke:'#4A9AE8','stroke-width':1.5});
+  s(svg,'text',{x:180,y:85,'text-anchor':'middle','font-size':16,fill:'#7AC8F0'},'◈');
+  // Vagus nerve branches — abstract
+  for(const [sx,sy,ex,ey] of [[180,64,180,20],[180,96,180,140],[164,78,100,50],[196,78,260,50],[164,82,95,105],[196,82,265,105]]){
+    s(svg,'line',{x1:sx,y1:sy,x2:ex,y2:ey,stroke:'#2A7AB8','stroke-width':1,opacity:0.5});
+  }
+  // Float tank suggestion bottom right
+  s(svg,'ellipse',{cx:300,cy:130,rx:45,ry:18,fill:'#1A3A6A',opacity:0.6});
+  s(svg,'text',{x:300,y:125,'text-anchor':'middle','font-size':11,fill:'#4A9AE8',opacity:0.6},'float');
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(100,180,220,0.6)'},'Nervous system. Quieter.');
+}
+
+function drawScene_nhs(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#0A1A2E'});
+  // Building
+  s(svg,'rect',{x:80,y:40,width:200,height:110,fill:'#1A2A3E'});
+  s(svg,'rect',{x:70,y:35,width:220,height:12,fill:'#2A3A4E'});
+  // NHS logo area
+  s(svg,'rect',{x:140,y:55,width:80,height:35,rx:4,fill:'#003087'});
+  s(svg,'text',{x:180,y:78,'text-anchor':'middle','font-family':'Arial,sans-serif','font-weight':'bold','font-size':18,fill:'white'},'NHS');
+  // Windows
+  for(const [wx,wy] of [[95,65],[95,95],[95,120],[165,95],[195,95],[245,65],[245,95],[245,120]]){
+    s(svg,'rect',{x:wx,y:wy,width:20,height:18,rx:2,fill:'#4A7AB8',opacity:0.7});
+  }
+  // Entrance
+  s(svg,'rect',{x:160,y:115,width:40,height:35,rx:3,fill:'#0A1A2E'});
+  s(svg,'rect',{x:163,y:118,width:16,height:30,rx:2,fill:'#1A3A5E',opacity:0.8});
+  s(svg,'rect',{x:181,y:118,width:16,height:30,rx:2,fill:'#1A3A5E',opacity:0.8});
+  // Path
+  s(svg,'rect',{x:0,y:140,width:360,height:20,fill:'#1A2A1A'});
+  s(svg,'rect',{x:155,y:140,width:50,height:20,fill:'#2A3A2A'});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(100,160,200,0.7)'},'Know your numbers.');
+}
+
+function drawScene_michelle(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  // Warm, calm room
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#1A0E08'});
+  s(svg,'rect',{x:0,y:0,width:360,height:100,fill:'#22120A'});
+  // Window with greenery outside
+  s(svg,'rect',{x:100,y:15,width:160,height:90,rx:6,fill:'#2A5020'});
+  s(svg,'rect',{x:104,y:19,width:152,height:82,rx:4,fill:'#3A7030'});
+  // Leaves
+  for(let i=0;i<12;i++) s(svg,'ellipse',{cx:100+Math.random()*160,cy:20+Math.random()*80,rx:12+Math.random()*8,ry:8+Math.random()*5,fill:'#4A9040',opacity:0.7,transform:`rotate(${Math.random()*60-30})`});
+  // Light shaft
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'mg',x1:'0.5',y1:'0',x2:'0.5',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#E8D0A0','stop-opacity':'0.15'});
+  s(g,'stop',{'offset':'100%','stop-color':'transparent'});
+  s(svg,'rect',{x:130,y:40,width:100,height:120,fill:'url(#mg)'});
+  // Treatment table
+  s(svg,'rect',{x:60,y:105,width:240,height:20,rx:4,fill:'#3A2010'});
+  s(svg,'rect',{x:65,y:102,width:230,height:6,rx:3,fill:'#5A3418'});
+  // Floor
+  s(svg,'rect',{x:0,y:125,width:360,height:35,fill:'#140C06'});
+  // Plants
+  for(const [px,py] of [[30,100],[310,100]]){
+    s(svg,'rect',{x:px,y:py+12,width:20,height:16,rx:2,fill:'#3A2010'});
+    for(let i=0;i<4;i++) s(svg,'ellipse',{cx:px+10,cy:py+i*8,rx:14-i*2,ry:8-i,fill:'#4A8030',opacity:0.8});
+  }
+  s(svg,'text',{x:180,y:153,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(160,200,120,0.6)'},'Back to the work.');
+}
+
+function drawScene_como(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'linearGradient',{id:'cog',x1:'0',y1:'0',x2:'0',y2:'1'});
+  s(g,'stop',{'offset':'0%','stop-color':'#1A3A6A'});
+  s(g,'stop',{'offset':'50%','stop-color':'#2A8AB8'});
+  s(g,'stop',{'offset':'51%','stop-color':'#1A7AB0'});
+  s(g,'stop',{'offset':'100%','stop-color':'#0A4A80'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#cog)'});
+  // Italian mountains
+  s(svg,'polygon',{points:'0,80 50,20 110,60 160,15 220,65 280,25 360,70 360,80',fill:'#3A5A4A'});
+  s(svg,'polygon',{points:'0,80 50,30 90,55 150,22 200,58 270,30 360,65 360,80',fill:'#4A6A5A'});
+  // Snow on peaks
+  s(svg,'polygon',{points:'145,22 150,15 155,22',fill:'#D8EEF5'});
+  s(svg,'polygon',{points:'275,30 280,23 285,30',fill:'#D8EEF5'});
+  // Italian villa
+  s(svg,'rect',{x:130,y:70,width:100,height:55,fill:'#C8A878'});
+  s(svg,'rect',{x:125,y:65,width:110,height:10,fill:'#D8B888'});
+  s(svg,'polygon',{points:'125,65 180,48 235,65',fill:'#B87A50'});
+  // Villa windows - shuttered
+  for(const [wx,wy] of [[140,80],[165,80],[195,80],[140,100],[165,100],[195,100]]){
+    s(svg,'rect',{x:wx,y:wy,width:16,height:14,rx:2,fill:'#2A4A6A',opacity:0.8});
+    s(svg,'rect',{x:wx-2,y:wy,width:4,height:14,rx:1,fill:'#3A6A4A'});
+    s(svg,'rect',{x:wx+14,y:wy,width:4,height:14,rx:1,fill:'#3A6A4A'});
+  }
+  // Boat on lake
+  s(svg,'ellipse',{cx:70,cy:95,rx:25,ry:8,fill:'#D8C890'});
+  s(svg,'line',{x1:70,y1:87,x2:70,y2:65,stroke:'#8A6A40','stroke-width':2});
+  s(svg,'polygon',{points:'70,65 95,80 70,82',fill:'#F0E8D0',opacity:0.8});
+  // Water shimmer
+  for(let i=0;i<10;i++) s(svg,'line',{x1:10+i*36,y1:92+i%3*4,x2:28+i*30,y2:94+i%3*3,stroke:'#7AC8E0','stroke-width':1.5,opacity:0.35});
+  // Italian light
+  s(svg,'ellipse',{cx:320,cy:40,rx:30,ry:30,fill:'#FFD060',opacity:0.15});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(160,210,240,0.7)'},'Lake Como. Long overdue.');
+}
+
+function drawScene_krav(svg){
+  svg.setAttribute('viewBox','0 0 360 160');
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'#0A0A0A'});
+  // Dojo walls
+  s(svg,'rect',{x:0,y:0,width:360,height:120,fill:'#121212'});
+  // Flag / emblem
+  s(svg,'rect',{x:155,y:15,width:50,height:35,fill:'#1A1A1A',stroke:'#3A3A3A','stroke-width':1});
+  s(svg,'text',{x:180,y:38,'text-anchor':'middle','font-size':22,fill:'#C9A84C'},'✡');
+  // Punching bags
+  for(const bx of [60,130,230,300]){
+    s(svg,'line',{x1:bx,y1:0,x2:bx,y2:25,stroke:'#3A3A3A','stroke-width':3});
+    s(svg,'rect',{x:bx-12,y:22,width:24,height:50,rx:12,fill:'#2A2A2A',stroke:'#4A4A4A','stroke-width':1});
+    s(svg,'rect',{x:bx-10,y:25,width:20,height:10,rx:5,fill:'#3A3A3A'});
+  }
+  // Mat floor
+  s(svg,'rect',{x:0,y:120,width:360,height:40,fill:'#1A0A0A'});
+  for(let i=0;i<9;i++) s(svg,'rect',{x:i*40,y:120,width:38,height:38,rx:2,fill:i%2===0?'#1A0A0A':'#200C0C',stroke:'#3A1A1A','stroke-width':1});
+  // Fighter silhouette
+  s(svg,'circle',{cx:180,cy:95,r:9,fill:'#C9A84C',opacity:0.7});
+  s(svg,'rect',{x:174,y:104,width:12,height:18,rx:3,fill:'#C9A84C',opacity:0.7});
+  s(svg,'line',{x1:174,y1:110,x2:158,y2:100,stroke:'#C9A84C','stroke-width':3,opacity:0.7});
+  s(svg,'line',{x1:186,y1:108,x2:198,y2:118,stroke:'#C9A84C','stroke-width':3,opacity:0.7});
+  // Dramatic light
+  const defs=s(svg,'defs',{});
+  const g=s(defs,'radialGradient',{id:'krg',cx:'50%',cy:'60%',r:'30%'});
+  s(g,'stop',{'offset':'0%','stop-color':'#C9A84C','stop-opacity':'0.1'});
+  s(g,'stop',{'offset':'100%','stop-color':'transparent'});
+  s(svg,'rect',{x:0,y:0,width:360,height:160,fill:'url(#krg)'});
+  s(svg,'text',{x:180,y:155,'text-anchor':'middle','font-family':'Playfair Display,serif','font-size':11,fill:'rgba(255,213,90,0.75)'},'2027. Stronger than ever.');
+}
+
+// ═══════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════
+let state = JSON.parse(localStorage.getItem('christmas_v2') || '{}');
+// state[id] = {done:[0,1,2,...]}
+
+function getProgress(id){
+  const aim = AIMS.find(a=>a.id===id);
+  return (state[id]?.done||[]).length;
+}
+function isStepDone(id,i){
+  return (state[id]?.done||[]).includes(i);
+}
+function toggleStep(id,i){
+  if(!state[id]) state[id]={done:[]};
+  const d=state[id].done;
+  const idx=d.indexOf(i);
+  if(idx>=0) d.splice(idx,1);
+  else d.push(i);
+  localStorage.setItem('christmas_v2',JSON.stringify(state));
+}
+
+// ═══════════════════════════════════════════════════════
+// ROAD DRAWING
+// ═══════════════════════════════════════════════════════
+function drawRoad(aim){
+  const steps=aim.steps;
+  const n=steps.length;
+  const svgEl=document.getElementById('road-svg');
+  svgEl.innerHTML='';
+
+  // Road dimensions
+  const W=340, H=180;
+  const padding=30;
+  const usableW=W-padding*2;
+
+  // Create winding path with n waypoints
+  // Points spread across width, alternating up/down in waves
+  const pts=[];
+  for(let i=0;i<n;i++){
+    const t=i/(n-1);
+    const x=padding+t*usableW;
+    // Wave: 0=top-ish, 1=mid, 2=bottom, etc
+    const wave=Math.sin(t*Math.PI*1.5)*40;
+    const y=90+wave;
+    pts.push([x,y]);
+  }
+
+  // Draw road shadow / base
+  const defs=document.createElementNS('http://www.w3.org/2000/svg','defs');
+  svgEl.appendChild(defs);
+
+  // Road path (thick, grey-brown dirt)
+  function makePath(ps,extra=0){
+    if(ps.length<2) return '';
+    let d=`M ${ps[0][0]} ${ps[0][1]}`;
+    for(let i=1;i<ps.length;i++){
+      const mx=(ps[i-1][0]+ps[i][0])/2;
+      const my=(ps[i-1][1]+ps[i][1])/2;
+      d+=` Q ${ps[i-1][0]} ${ps[i-1][1]} ${mx} ${my}`;
+    }
+    d+=` L ${ps[ps.length-1][0]} ${ps[ps.length-1][1]}`;
+    return d;
+  }
+
+  const pathD=makePath(pts);
+
+  // Road border (slightly wider)
+  const roadBorder=document.createElementNS('http://www.w3.org/2000/svg','path');
+  roadBorder.setAttribute('d',pathD);
+  roadBorder.setAttribute('fill','none');
+  roadBorder.setAttribute('stroke','#5A3E28');
+  roadBorder.setAttribute('stroke-width','22');
+  roadBorder.setAttribute('stroke-linecap','round');
+  roadBorder.setAttribute('stroke-linejoin','round');
+  svgEl.appendChild(roadBorder);
+
+  // Road surface
+  const road=document.createElementNS('http://www.w3.org/2000/svg','path');
+  road.setAttribute('d',pathD);
+  road.setAttribute('fill','none');
+  road.setAttribute('stroke','#8B6F47');
+  road.setAttribute('stroke-width','18');
+  road.setAttribute('stroke-linecap','round');
+  road.setAttribute('stroke-linejoin','round');
+  svgEl.appendChild(road);
+
+  // Road texture - gravel dots
+  // Approximate points along path and scatter dots
+  for(let t=0;t<1;t+=0.04){
+    const idx=Math.floor(t*(n-1));
+    if(idx>=pts.length-1) continue;
+    const local=t*(n-1)-idx;
+    const px=pts[idx][0]+(pts[idx+1][0]-pts[idx][0])*local;
+    const py=pts[idx][1]+(pts[idx+1][1]-pts[idx][1])*local;
+    for(let j=0;j<3;j++){
+      const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      dot.setAttribute('cx',px+(Math.random()-0.5)*14);
+      dot.setAttribute('cy',py+(Math.random()-0.5)*14);
+      dot.setAttribute('r',1+Math.random()*1.5);
+      dot.setAttribute('fill',Math.random()>0.5?'#A07850':'#6A5038');
+      dot.setAttribute('opacity','0.6');
+      svgEl.appendChild(dot);
+    }
+  }
+
+  // Gold fill for done steps
+  const doneSoFar=[];
+  let lastDoneIdx=-1;
+  for(let i=0;i<n;i++){
+    if(isStepDone(aim.id,i)){
+      doneSoFar.push(pts[i]);
+      lastDoneIdx=i;
+    } else break; // gold only fills contiguous from start
+  }
+  // Actually fill gold up to highest completed step
+  const maxDone=Math.max(-1,...(state[aim.id]?.done||[]));
+
+  if(maxDone>=0){
+    const goldPts=pts.slice(0,maxDone+1);
+    if(goldPts.length>=2){
+      const goldPath=document.createElementNS('http://www.w3.org/2000/svg','path');
+      goldPath.setAttribute('d',makePath(goldPts));
+      goldPath.setAttribute('fill','none');
+      goldPath.setAttribute('stroke','#C9A84C');
+      goldPath.setAttribute('stroke-width','14');
+      goldPath.setAttribute('stroke-linecap','round');
+      goldPath.setAttribute('stroke-linejoin','round');
+      goldPath.setAttribute('opacity','0.85');
+      svgEl.appendChild(goldPath);
+      // Shimmer on top
+      const shimmer=document.createElementNS('http://www.w3.org/2000/svg','path');
+      shimmer.setAttribute('d',makePath(goldPts));
+      shimmer.setAttribute('fill','none');
+      shimmer.setAttribute('stroke','#E8C97A');
+      shimmer.setAttribute('stroke-width','5');
+      shimmer.setAttribute('stroke-linecap','round');
+      shimmer.setAttribute('stroke-linejoin','round');
+      shimmer.setAttribute('opacity','0.4');
+      svgEl.appendChild(shimmer);
+    }
+  }
+
+  // Waypoint markers
+  for(let i=0;i<n;i++){
+    const [x,y]=pts[i];
+    const done=isStepDone(aim.id,i);
+    // Outer ring
+    const ring=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ring.setAttribute('cx',x); ring.setAttribute('cy',y); ring.setAttribute('r','11');
+    ring.setAttribute('fill',done?'#C9A84C':'#2A1A08');
+    ring.setAttribute('stroke',done?'#E8C97A':'rgba(255,213,90,0.65)');
+    ring.setAttribute('stroke-width','2');
+    svgEl.appendChild(ring);
+    // Number / check
+    const txt=document.createElementNS('http://www.w3.org/2000/svg','text');
+    txt.setAttribute('x',x); txt.setAttribute('y',y+4);
+    txt.setAttribute('text-anchor','middle');
+    txt.setAttribute('font-size','9');
+    txt.setAttribute('font-family','Crimson Pro,serif');
+    txt.setAttribute('font-weight','600');
+    txt.setAttribute('fill',done?'#1A0800':'rgba(255,213,90,0.88)');
+    txt.textContent=done?'✓':(i+1);
+    svgEl.appendChild(txt);
+  }
+
+  // Start figure (you) — left of first point
+  const [sx,sy]=pts[0];
+  // Person
+  const figG=document.createElementNS('http://www.w3.org/2000/svg','g');
+  figG.setAttribute('transform',`translate(${sx-28},${sy-2})`);
+  const head=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  head.setAttribute('cx','8'); head.setAttribute('cy','-10'); head.setAttribute('r','5');
+  head.setAttribute('fill','#C9A84C'); figG.appendChild(head);
+  const body=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  body.setAttribute('x','5'); body.setAttribute('y','-5'); body.setAttribute('width','6'); body.setAttribute('height','10');
+  body.setAttribute('rx','2'); body.setAttribute('fill','#A07830'); figG.appendChild(body);
+  svgEl.appendChild(figG);
+
+  // Destination marker — right of last point
+  const [dx,dy]=pts[n-1];
+  const destG=document.createElementNS('http://www.w3.org/2000/svg','g');
+  destG.setAttribute('transform',`translate(${dx+6},${dy-18})`);
+  const flag=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  flag.setAttribute('x','0'); flag.setAttribute('y','0'); flag.setAttribute('width','14'); flag.setAttribute('height','10');
+  flag.setAttribute('rx','1'); flag.setAttribute('fill',maxDone===n-1?'#C9A84C':'#3A2A14');
+  flag.setAttribute('stroke','rgba(255,213,90,0.75)'); flag.setAttribute('stroke-width','1');
+  destG.appendChild(flag);
+  const pole=document.createElementNS('http://www.w3.org/2000/svg','line');
+  pole.setAttribute('x1','0'); pole.setAttribute('y1','0'); pole.setAttribute('x2','0'); pole.setAttribute('y2','20');
+  pole.setAttribute('stroke','#6A5030'); pole.setAttribute('stroke-width','2');
+  destG.appendChild(pole);
+  svgEl.appendChild(destG);
+}
+
+// ═══════════════════════════════════════════════════════
+// RENDER GRID
+// ═══════════════════════════════════════════════════════
+function renderGrid(){
+  const grid=document.getElementById('grid-view');
+  grid.innerHTML='';
+  let totalDone=0;
+  AIMS.forEach(aim=>{
+    const prog=getProgress(aim.id);
+    const total=aim.steps.length;
+    if(prog===total && total>0) totalDone++;
+
+    const card=document.createElement('div');
+    card.className='aim-card';
+    card.onclick=()=>openDetail(aim.id);
+
+    // Scene SVG
+    const sceneSVG=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    sceneSVG.setAttribute('class','card-scene');
+    sceneSVG.setAttribute('viewBox','0 0 360 160');
+    sceneSVG.setAttribute('preserveAspectRatio','xMidYMid slice');
+    aim.scene(sceneSVG);
+    card.appendChild(sceneSVG);
+
+    // Footer
+    const footer=document.createElement('div');
+    footer.className='card-footer';
+    footer.innerHTML=`<div class="card-title">${aim.title}</div>
+      <div class="card-steps">${aim.steps.map((_,i)=>`<div class="step-dot${isStepDone(aim.id,i)?' done':''}"></div>`).join('')}</div>
+      <div class="card-progress-bar"><div class="card-progress-fill" style="width:${total>0?prog/total*100:0}%"></div></div>`;
+    card.appendChild(footer);
+
+    // Lock badge
+    if(aim.lock){
+      const lock=document.createElement('div');
+      lock.className='card-lock';
+      lock.textContent='🔒 '+aim.lock.weight;
+      card.appendChild(lock);
+    }
+    grid.appendChild(card);
+  });
+  document.getElementById('progress-pill').textContent=`${totalDone} / ${AIMS.length}`;
+}
+
+// ═══════════════════════════════════════════════════════
+// DETAIL
+// ═══════════════════════════════════════════════════════
+let currentAimId=null;
+
+function openDetail(id){
+  const aim=AIMS.find(a=>a.id===id);
+  currentAimId=id;
+
+  document.getElementById('detail-title').textContent=aim.title;
+  document.getElementById('detail-subtitle').textContent=aim.steps.length+' steps on this road';
+
+  // Scene
+  const sceneEl=document.getElementById('detail-scene');
+  sceneEl.innerHTML='';
+  aim.scene(sceneEl);
+
+  // Road
+  drawRoad(aim);
+
+  // Waypoint list
+  const list=document.getElementById('waypoint-list');
+  list.innerHTML='';
+  aim.steps.forEach((step,i)=>{
+    const done=isStepDone(id,i);
+    const item=document.createElement('div');
+    item.className='waypoint-item'+(aim.lock&&i===0?' locked':'');
+    item.innerHTML=`
+      <div class="wp-circle${done?' done':''}" data-n="${i+1}"></div>
+      <div class="wp-text">
+        <div class="wp-name">${step.name}</div>
+        <div class="wp-desc">${step.desc}</div>
+        ${aim.lock&&i===0?`<span class="wp-lock-badge">🔒 ${aim.lock.weight}</span>`:''}
+      </div>`;
+    if(!aim.lock || i!==0){
+      item.onclick=()=>handleStepTap(id,i);
+    }
+    list.appendChild(item);
+  });
+
+  document.getElementById('detail-view').classList.add('open');
+  document.getElementById('road-container').scrollTop=0;
+}
+
+function closeDetail(){
+  document.getElementById('detail-view').classList.remove('open');
+  currentAimId=null;
+}
+
+function handleStepTap(id,i){
+  const wasDone=isStepDone(id,i);
+  toggleStep(id,i);
+  const nowDone=isStepDone(id,i);
+
+  // Re-render road
+  const aim=AIMS.find(a=>a.id===id);
+  drawRoad(aim);
+
+  // Update list
+  const items=document.querySelectorAll('#waypoint-list .waypoint-item');
+  const circle=items[i]?.querySelector('.wp-circle');
+  if(circle){
+    if(nowDone) circle.classList.add('done');
+    else circle.classList.remove('done');
+  }
+
+  // Update card in background
+  renderGrid();
+
+  // Celebrations
+  const prog=getProgress(id);
+  const total=aim.steps.length;
+
+  if(nowDone && !wasDone){
+    if(prog===total){
+      setTimeout(()=>showCelebration(aim.celebration),300);
+    } else {
+      showToast(aim.steps[i].name+' — done ✓');
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// LOCK OVERLAY
+// ═══════════════════════════════════════════════════════
+function showLock(aimId){
+  const aim=AIMS.find(a=>a.id===aimId);
+  document.getElementById('lock-title').textContent='Locked for now';
+  document.getElementById('lock-msg').textContent=aim.lock.msg;
+  document.getElementById('lock-overlay').classList.add('show');
+}
+function closeLock(){document.getElementById('lock-overlay').classList.remove('show')}
+
+// ═══════════════════════════════════════════════════════
+// TOAST & CELEBRATION
+// ═══════════════════════════════════════════════════════
+let toastTimer=null;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+function showCelebration(celeb){
+  document.getElementById('celeb-icon').textContent=celeb.icon;
+  document.getElementById('celeb-title').textContent=celeb.title;
+  document.getElementById('celeb-msg').textContent=celeb.msg;
+  document.getElementById('celebration').classList.add('show');
+  // Confetti
+  launchConfetti();
+}
+function closeCelebration(){document.getElementById('celebration').classList.remove('show')}
+
+function launchConfetti(){
+  const colors=['#C9A84C','#E8C97A','#FFE080','#ffffff','#8B6914'];
+  for(let i=0;i<60;i++){
+    const el=document.createElement('div');
+    el.style.cssText=`position:fixed;width:8px;height:8px;border-radius:50%;pointer-events:none;z-index:700;
+      left:${Math.random()*100}vw;top:-10px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation:confettiFall ${1.5+Math.random()*2}s ease-in forwards;
+      animation-delay:${Math.random()*0.5}s;`;
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),4000);
+  }
+}
+const styleEl=document.createElement('style');
+styleEl.textContent=`@keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}`;
+document.head.appendChild(styleEl);
+
+// ═══════════════════════════════════════════════════════
+// AI ROAD BUILDER
+// ═══════════════════════════════════════════════════════
+
+function openAIPanel(){
+  const aim = AIMS.find(a=>a.id===currentAimId);
+  if(!aim) return;
+  document.getElementById('ai-panel-sub').textContent =
+    `Tell it where you are and any constraints. It will build a real critical path for "${aim.title}" — no vagueness, just what to do next.`;
+  document.getElementById('ai-context-input').value='';
+  document.getElementById('ai-generate-btn').disabled=false;
+  document.getElementById('ai-panel').classList.add('show');
+}
+
+function closeAIPanel(){
+  document.getElementById('ai-panel').classList.remove('show');
+}
+
+function addChip(text){
+  const ta=document.getElementById('ai-context-input');
+  const cur=ta.value.trim();
+  ta.value = cur ? cur+'. '+text : text;
+  ta.focus();
+}
+
+async function generateRoad(){
+  const aim=AIMS.find(a=>a.id===currentAimId);
+  if(!aim) return;
+  const context=document.getElementById('ai-context-input').value.trim();
+
+  document.getElementById('ai-generate-btn').disabled=true;
+  closeAIPanel();
+  document.getElementById('ai-loading').classList.add('show');
+
+  const prompt=`You are a no-nonsense personal achievement coach. The user has one aim: "${aim.title}".
+
+Their personal context: ${context||'No additional context provided.'}
+
+Your job is to break this aim down into a critical path of 4-7 concrete steps, working backwards from the destination to what they can do RIGHT NOW. 
+
+Rules:
+- No vague steps like "work on it" or "stay motivated"
+- Each step must be a clear, doable action or milestone
+- Make it personal to their context — reference specifics they mentioned
+- The final step is achieving the aim fully
+- The first step is something they could do today or this week
+- Be direct and honest, not motivational-poster fluffy
+
+Return ONLY valid JSON, no preamble, no markdown:
+{
+  "steps": [
+    {"name": "short step title (max 6 words)", "desc": "one honest sentence about why this step matters or what it means"},
+    ...
+  ]
+}`;
+
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    const data=await res.json();
+    const text=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+    const clean=text.replace(/```json|```/g,'').trim();
+    const parsed=JSON.parse(clean);
+
+    if(parsed.steps && parsed.steps.length){
+      // Store AI steps against this aim in state
+      if(!state[aim.id]) state[aim.id]={done:[]};
+      state[aim.id].aiSteps=parsed.steps;
+      state[aim.id].done=[];  // reset progress for fresh road
+      localStorage.setItem('christmas_v2',JSON.stringify(state));
+
+      // Update button
+      document.getElementById('build-road-label').textContent='Rebuild my road with AI';
+      document.getElementById('build-road-btn').classList.add('has-ai');
+
+      // Reopen detail with new steps
+      document.getElementById('ai-loading').classList.remove('show');
+      refreshDetailWithAI(aim);
+      showToast('Road built — '+parsed.steps.length+' steps mapped');
+    } else {
+      throw new Error('No steps returned');
+    }
+  } catch(e){
+    document.getElementById('ai-loading').classList.remove('show');
+    document.getElementById('ai-generate-btn').disabled=false;
+    showToast('Could not build road — try again');
+    console.error(e);
+  }
+}
+
+function getAimSteps(aim){
+  // Return AI steps if they exist, otherwise default
+  const aiSteps=state[aim.id]?.aiSteps;
+  return aiSteps || aim.steps;
+}
+
+function refreshDetailWithAI(aim){
+  const steps=getAimSteps(aim);
+
+  // Update subtitle
+  document.getElementById('detail-subtitle').textContent=steps.length+' steps on this road';
+
+  // Rebuild road with new steps (temporarily patch aim.steps)
+  const originalSteps=aim.steps;
+  aim.steps=steps;
+  drawRoad(aim);
+  aim.steps=originalSteps;
+
+  // Rebuild waypoint list
+  const list=document.getElementById('waypoint-list');
+  list.innerHTML='';
+  const isAI=!!(state[aim.id]?.aiSteps);
+  steps.forEach((step,i)=>{
+    const done=isStepDone(aim.id,i);
+    const item=document.createElement('div');
+    item.className='waypoint-item';
+    item.innerHTML=`
+      <div class="wp-circle${done?' done':''}" data-n="${i+1}"></div>
+      <div class="wp-text">
+        <div class="wp-name">${step.name}${isAI?'<span class="ai-badge">AI</span>':''}</div>
+        <div class="wp-desc">${step.desc}</div>
+      </div>`;
+    item.onclick=()=>handleStepTapDynamic(aim.id,i,steps);
+    list.appendChild(item);
+  });
+}
+
+function handleStepTapDynamic(id,i,steps){
+  const wasDone=isStepDone(id,i);
+  toggleStep(id,i);
+  const nowDone=isStepDone(id,i);
+
+  const aim=AIMS.find(a=>a.id===id);
+  const orig=aim.steps;
+  aim.steps=steps;
+  drawRoad(aim);
+  aim.steps=orig;
+
+  const items=document.querySelectorAll('#waypoint-list .waypoint-item');
+  const circle=items[i]?.querySelector('.wp-circle');
+  if(circle){if(nowDone) circle.classList.add('done'); else circle.classList.remove('done');}
+
+  renderGrid();
+
+  const prog=getProgress(id);
+  if(nowDone && !wasDone){
+    if(prog===steps.length){
+      setTimeout(()=>showCelebration(aim.celebration),300);
+    } else {
+      showToast(steps[i].name+' — done ✓');
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════
+renderGrid();
+
+// ═══════════════════════════════════════════════
+// EXPORT / IMPORT
+// ═══════════════════════════════════════════════
+const EI_KEYS = ['christmas_v2'];
+
+function eiOpen(){{
+  document.getElementById('ei-code-area').value='';
+  document.getElementById('ei-copy-btn').style.display='block';
+  document.getElementById('ei-confirm-btn').style.display='none';
+  document.getElementById('ei-overlay').classList.add('show');
+}}
+function eiClose(){{document.getElementById('ei-overlay').classList.remove('show')}}
+
+function eiExport(){{
+  const data={};
+  EI_KEYS.forEach(k=>{{const v=localStorage.getItem(k);if(v)data[k]=v;}});
+  const code=btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  document.getElementById('ei-code-area').value=code;
+  document.getElementById('ei-copy-btn').style.display='block';
+  document.getElementById('ei-confirm-btn').style.display='none';
+}}
+
+function eiImportMode(){{
+  document.getElementById('ei-code-area').value='';
+  document.getElementById('ei-code-area').placeholder='Paste your backup code here...';
+  document.getElementById('ei-copy-btn').style.display='none';
+  document.getElementById('ei-confirm-btn').style.display='block';
+}}
+
+function eiCopy(){{
+  const code=document.getElementById('ei-code-area').value;
+  if(!code)return;
+  navigator.clipboard.writeText(code).then(()=>{{
+    document.getElementById('ei-copy-btn').textContent='Copied ✓';
+    setTimeout(()=>document.getElementById('ei-copy-btn').textContent='Copy code',2000);
+  }}).catch(()=>{{
+    document.getElementById('ei-code-area').select();
+    document.execCommand('copy');
+  }});
+}}
+
+function eiConfirmImport(){{
+  const code=document.getElementById('ei-code-area').value.trim();
+  if(!code)return;
+  try{{
+    const data=JSON.parse(decodeURIComponent(escape(atob(code))));
+    Object.entries(data).forEach(([k,v])=>localStorage.setItem(k,v));
+    eiClose();
+    setTimeout(()=>location.reload(),300);
+  }}catch(e){{
+    alert('Invalid backup code — please check and try again');
+  }}
+}}
+</script>
+<!-- EXPORT/IMPORT -->
+<div id="ei-overlay" onclick="eiClose()">
+  <div id="ei-box" onclick="event.stopPropagation()">
+    <div class="ei-title">Data backup</div>
+    <div class="ei-sub">Export your data as a code to back it up or move it to a new URL. Import to restore.</div>
+    <div class="ei-btn-row">
+      <button class="ei-action-btn ei-export-btn" onclick="eiExport()">⬆ Export</button>
+      <button class="ei-action-btn ei-import-btn" onclick="eiImportMode()">⬇ Import</button>
+    </div>
+    <textarea id="ei-code-area" placeholder="Your backup code will appear here after export. Or paste an import code here."></textarea>
+    <div class="ei-code-action-row">
+      <button class="ei-copy-btn" id="ei-copy-btn" onclick="eiCopy()">Copy code</button>
+      <button class="ei-confirm-btn" id="ei-confirm-btn" onclick="eiConfirmImport()">Restore data</button>
+      <button class="ei-close-btn" onclick="eiClose()">Close</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
