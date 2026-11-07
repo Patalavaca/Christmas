@@ -384,7 +384,7 @@
       <div class="ai-chip" onclick="addChip('I walk 10,000 steps per day already')">10k steps</div>
       <div class="ai-chip" onclick="addChip('I am based in Altrincham, Manchester')">Altrincham</div>
       <div class="ai-chip" onclick="addChip('I want to be realistic, not perfect')">Be realistic</div>
-      <div class="ai-chip" onclick="addChip('My deadline is Christmas 2026')">Christmas deadline</div>
+      <div class="ai-chip" onclick="addChip('My target is June 2027')">Christmas deadline</div>
     </div>
     <div class="ai-btn-row">
       <button class="ai-btn-cancel" onclick="closeAIPanel()">Cancel</button>
@@ -454,9 +454,8 @@ const AIMS = [
   },
   {
     id:'london', title:'London Stag', color:'#8B6914', accent:'#C9A84C',
-    lock:{weight:'12st 4', msg:'Reach 12st 4 to unlock the London Stag.'},
+    lock:null, forceComplete:true,
     steps:[
-      {name:'Reach 12st 4',desc:'Weight gate — unlocks this aim.'},
       {name:'Buy new jeans',desc:'Something that actually fits.'},
       {name:'Confirm with John',desc:'You\'re going.'},
       {name:'Book train or hotel',desc:'Make it real.'},
@@ -467,9 +466,8 @@ const AIMS = [
   },
   {
     id:'dublin', title:'Dublin Stag', color:'#2D6A35', accent:'#4CAF50',
-    lock:{weight:'12st 4', msg:'Reach 12st 4 to unlock Dublin.'},
+    lock:null,
     steps:[
-      {name:'Reach 12st 4',desc:'Weight gate.'},
       {name:'Confirm with John',desc:'You\'re in.'},
       {name:'Book flights MAN→DUB',desc:'It\'s happening.'},
       {name:'Book accommodation',desc:'Temple Bar area.'},
@@ -480,9 +478,8 @@ const AIMS = [
   },
   {
     id:'wedding', title:"John's Wedding", color:'#7A8FA6', accent:'#B8D4E8',
-    lock:{weight:'12st', msg:'Reach 12 stone to unlock the wedding goal.'},
+    lock:null,
     steps:[
-      {name:'Reach 12 stone',desc:'Weight gate.'},
       {name:'Try suit on',desc:'Does it fit properly?'},
       {name:'Buy new shirt',desc:'Look sharp.'},
       {name:'Attend — 2 Jan 2027',desc:'Show up well.'}
@@ -507,7 +504,7 @@ const AIMS = [
     id:'swimming', title:'Swimming Regularly', color:'#1565A8', accent:'#4A9FD8',
     lock:null,
     steps:[
-      {name:'Get Swedish goggles',desc:'Wide seal. Speedo Biofuse or similar.'},
+      {name:'Soft-seal goggles',desc:'Speedo Biofuse or similar — gentle on the jaw.'},
       {name:'First swim session',desc:'Just get in.'},
       {name:'Swim twice in one week',desc:'Finding the rhythm.'},
       {name:'Swim weekly for a month',desc:'It\'s a habit now.'},
@@ -518,9 +515,9 @@ const AIMS = [
   },
   {
     id:'yoga', title:'Yoga — Hatha Classes', color:'#5C3D8A', accent:'#9B72C8',
-    lock:{weight:'12st 4', msg:'Reach 12st 4 to unlock yoga group classes.'},
+    lock:{weight:'12st 12', msg:'Reach 12st 12 to unlock yoga group classes.'},
     steps:[
-      {name:'Reach 12st 4',desc:'Weight gate.'},
+      {name:'Reach 12st 12',desc:'Weight gate.'},
       {name:'Find Hatha class locally',desc:'Look this week.'},
       {name:'Book first session',desc:'In the diary.'},
       {name:'Attend first class',desc:'Just be in the room.'},
@@ -531,9 +528,9 @@ const AIMS = [
   },
   {
     id:'padel', title:'Padel', color:'#3A8A4A', accent:'#6CC97A',
-    lock:{weight:'12st', msg:'Reach 12 stone before playing padel — joint pressure matters.'},
+    lock:{weight:'12st 6', msg:'Reach 12st 6 before playing padel — joint pressure matters.'},
     steps:[
-      {name:'Reach 12 stone',desc:'Weight gate — joints first.'},
+      {name:'Reach 12st 6',desc:'Weight gate — joints first.'},
       {name:'Find padel courts near Altrincham',desc:'Book an intro session.'},
       {name:'First game',desc:'You\'ll love it.'},
       {name:'Play monthly',desc:'In the social routine now.'}
@@ -556,9 +553,8 @@ const AIMS = [
   },
   {
     id:'nhs', title:'NHS Health Check', color:'#6A4A8A', accent:'#AA82C8',
-    lock:{weight:'12st', msg:'Reach 12 stone — go in feeling like yourself.'},
+    lock:null,
     steps:[
-      {name:'Reach 12 stone',desc:'Go in feeling right.'},
       {name:'Book GP appointment',desc:'NHS Health Check — overdue.'},
       {name:'H. pylori breath test',desc:'From GI MAP findings.'},
       {name:'Attend health check',desc:'Know your numbers.'},
@@ -1066,9 +1062,12 @@ let state = JSON.parse(localStorage.getItem('christmas_v2') || '{}');
 
 function getProgress(id){
   const aim = AIMS.find(a=>a.id===id);
+  if(aim.forceComplete) return aim.steps.length;
   return (state[id]?.done||[]).length;
 }
 function isStepDone(id,i){
+  const aim = AIMS.find(a=>a.id===id);
+  if(aim.forceComplete) return true;
   return (state[id]?.done||[]).includes(i);
 }
 function toggleStep(id,i){
@@ -1275,6 +1274,31 @@ function renderGrid(){
     sceneSVG.setAttribute('viewBox','0 0 360 160');
     sceneSVG.setAttribute('preserveAspectRatio','xMidYMid slice');
     aim.scene(sceneSVG);
+    // Title + progress label overlay
+    const prog=getProgress(aim.id);
+    const total=aim.steps.length;
+    const labelG=document.createElementNS('http://www.w3.org/2000/svg','g');
+    // Background pill
+    const pill=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    pill.setAttribute('x','4');pill.setAttribute('y','4');
+    pill.setAttribute('rx','6');pill.setAttribute('ry','6');
+    pill.setAttribute('fill','rgba(26,18,8,0.7)');
+    const labelTxt=document.createElementNS('http://www.w3.org/2000/svg','text');
+    labelTxt.setAttribute('x','10');labelTxt.setAttribute('y','17');
+    labelTxt.setAttribute('fill','#FFE680');
+    labelTxt.setAttribute('font-family','Crimson Pro, serif');
+    labelTxt.setAttribute('font-size','11');
+    labelTxt.setAttribute('font-weight','500');
+    labelTxt.textContent=`${aim.title} · ${prog}/${total}`;
+    labelG.appendChild(pill);
+    labelG.appendChild(labelTxt);
+    sceneSVG.appendChild(labelG);
+    // Size pill to text after render
+    requestAnimationFrame(()=>{
+      const bb=labelTxt.getBBox();
+      pill.setAttribute('width',bb.width+12);
+      pill.setAttribute('height',bb.height+6);
+    });
     card.appendChild(sceneSVG);
 
     // Footer
@@ -1292,6 +1316,14 @@ function renderGrid(){
       lock.textContent='🔒 '+aim.lock.weight;
       card.appendChild(lock);
     }
+    // Complete badge for forceComplete aims
+    if(aim.forceComplete){
+      const done=document.createElement('div');
+      done.className='card-lock';
+      done.style.background='rgba(74,124,63,0.85)';
+      done.textContent='✓ Complete';
+      card.appendChild(done);
+    }
     grid.appendChild(card);
   });
   document.getElementById('progress-pill').textContent=`${totalDone} / ${AIMS.length}`;
@@ -1307,12 +1339,34 @@ function openDetail(id){
   currentAimId=id;
 
   document.getElementById('detail-title').textContent=aim.title;
-  document.getElementById('detail-subtitle').textContent=aim.steps.length+' steps on this road';
+  document.getElementById('detail-subtitle').textContent=aim.forceComplete?'✓ Complete — all steps done':aim.steps.length+' steps on this road';
 
   // Scene
   const sceneEl=document.getElementById('detail-scene');
   sceneEl.innerHTML='';
   aim.scene(sceneEl);
+  // Title + progress label on detail scene
+  const dProg=getProgress(aim.id);
+  const dTotal=aim.steps.length;
+  const dLabelG=document.createElementNS('http://www.w3.org/2000/svg','g');
+  const dPill=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  dPill.setAttribute('x','4');dPill.setAttribute('y','4');
+  dPill.setAttribute('rx','6');dPill.setAttribute('ry','6');
+  dPill.setAttribute('fill','rgba(26,18,8,0.7)');
+  const dLabelTxt=document.createElementNS('http://www.w3.org/2000/svg','text');
+  dLabelTxt.setAttribute('x','10');dLabelTxt.setAttribute('y','17');
+  dLabelTxt.setAttribute('fill','#FFE680');
+  dLabelTxt.setAttribute('font-family','Crimson Pro, serif');
+  dLabelTxt.setAttribute('font-size','11');
+  dLabelTxt.setAttribute('font-weight','500');
+  dLabelTxt.textContent=`${aim.title} · ${dProg}/${dTotal}`;
+  dLabelG.appendChild(dPill);dLabelG.appendChild(dLabelTxt);
+  sceneEl.appendChild(dLabelG);
+  requestAnimationFrame(()=>{
+    const bb=dLabelTxt.getBBox();
+    dPill.setAttribute('width',bb.width+12);
+    dPill.setAttribute('height',bb.height+6);
+  });
 
   // Road
   drawRoad(aim);
@@ -1331,7 +1385,7 @@ function openDetail(id){
         <div class="wp-desc">${step.desc}</div>
         ${aim.lock&&i===0?`<span class="wp-lock-badge">🔒 ${aim.lock.weight}</span>`:''}
       </div>`;
-    if(!aim.lock || i!==0){
+    if(!aim.forceComplete && (!aim.lock || i!==0)){
       item.onclick=()=>handleStepTap(id,i);
     }
     list.appendChild(item);
